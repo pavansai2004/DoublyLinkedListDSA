@@ -43,3 +43,63 @@ class DoublyLinkedList{
         list.printalltheNodes();
     }
 }
+import java.util.*;
+class Doubly{
+    class Node{
+        int data;
+        Node prev;
+        Node next;
+        Node(int data){
+            this.data=data;
+            prev=NULL;
+            next=NULL;
+        }
+    }
+    Node head=NULL,tail=NULL;
+    public void insertatpos(int data){
+        Node newNode= new Node(data);
+        System.out.print("Enter the position to insert the node: ");
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        Node temp=head;
+        int count=0;
+        while(temp.next!=NULL)
+        {
+            count++;
+            temp=temp.next;
+        }
+        if(count==0)
+        {
+            head=newNode;
+            tail=newNode;
+        }
+        else
+        {
+            if(n==1)
+            {
+                head.prev=newNode;
+                newNode.next=head;
+                head=newNode;
+            }
+            else if(n>count && n!=1)
+            {
+                tail.next=newNode;
+                newNode.prev=tail;
+                tail=tail.next;
+            }
+            else
+            {
+                Node temp1,temp2;
+                temp1=head;
+                temp2=temp1;
+                for(int i=1;i<n;i++)
+                {
+                    temp1=temp2;
+                    temp1=temp1.next;
+                }
+                newNode.prev=
+            }
+        }
+        
+    }
+}
